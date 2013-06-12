@@ -1,7 +1,52 @@
+#Start of exercise 1
 puts "hello World"
 puts "hello Again" 
 puts "I like typing like this"
 puts "This is fun."
 puts "Yay! for Printing"
-#puts "I'd rather you 'not'"
-#puts 'I "said" do not touch this'
+#End of exercise 1
+
+#Start of exercise 3
+puts "I will now count my chickens:"
+
+puts "Hens", 25 + 30 / 6
+puts "Roosters", 100 - 25 * 3 % 4
+
+puts 3 + 2 + 1 - 5 + 4 % 2 - 1 / 4 + 6
+
+puts "Is it true that 3 + 2 < 5 - 7?"
+
+puts 3 + 2 < 5 - 7
+
+puts "What is 3 + 2?", 3 + 2
+puts "What is 5 - 7?", 5 - 7
+
+puts "Oh, that's why it's false."
+
+puts "How about some more."
+
+puts "Is it greater?", 5 > -2
+puts "Is it greater or equal?", 5 >= -2
+puts "Is it less or equal?", 5 <= -2
+#End of exercise 3
+
+#Start of exercise 4
+cars = 100
+space_in_a_car = 4.0
+drivers = 30
+passengers = 90
+cars_not_driven = cars - drivers
+cars_driven = drivers
+carpool_capacity = cars_driven * space_in_a_car
+average_passengers_per_car = passengers / cars_driven
+
+puts "There are #{cars} cars availabe."
+puts "There are only #{drivers} drivers available."
+puts "There will be #{cars_not_driven} empty cars today."
+puts "We can transport #{carpool_capacity} people today."
+puts "We have transport #{passengers} passengers to carpool today."
+puts "We need to put about #{average_passengers_per_car} in each car."
+#End of exercise 4
+
+
+
