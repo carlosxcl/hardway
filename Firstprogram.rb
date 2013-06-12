@@ -248,39 +248,67 @@ puts "Your third variable is: #{third}"
 #End of exercise 15 -----------------------------------------------------------------
 
 #Start of exercise 16 -----------------------------------------------------------------
-filename = ARGV.first
-script = 0%
+# filename = ARGV.first #Gets the file (first input)
+# script = $0 #Name of the script
 
-puts "We're going to erase #{filename}."
-puts "If you don't want that, hit CTRL-C (^C)."
-puts "If you do want that, hit RETURN."
+# puts "We're going to erase #{filename}." #This chooses ARVG.first (first input)
+# puts "If you don't want that, hit CTRL-C (^C)."
+# puts "If you do want that, hit RETURN."
 
-print "? "
-STDIN.gets
+# print "? "
+# STDIN.gets #grabs user input
 
-puts "Opening the file..."
-target = File.open(filename, 'w')
+# puts "Opening the file..."
+# target = File.open(filename, 'w') #target variable set to open file
 
-puts "Truncating the file. Goodbye!"
-target.truncate(target.size)
+# puts "Truncating the file. Goodbye!"
+# target.truncate(target.size)
 
-puts "Now I'am going to ask you for three lines."
+# puts "Now I'am going to ask you for three lines."
 
-print "line 1: "; line1 = STDIN.gets.chomp()
-print "line 2: "; line2 = STDIN.gets.chomp()
-print "line 3: "; line3 = STDIN.gets.chomp()
+# print "line 1: "; line1 = STDIN.gets.chomp() #getting user input 
+# print "line 2: "; line2 = STDIN.gets.chomp()
+# print "line 3: "; line3 = STDIN.gets.chomp()
 
-puts "I'm going to write these to the file."
+# puts "I'm going to write these to the file."
 
-target.write(line1)
-target.write("\n")
-target.write(line2)
-target.write("\n")
-target.write(line3)
-target.write("\n")
+# target.write(line1) #writes them unto empy file (was trucated)
+# target.write("\n")
+# target.write(line2)
+# target.write("\n")
+# target.write(line3)
+# target.write("\n")
 
-puts "And finally, we close it."
-target.close()
+# puts "And finally, we close it."
+# target.close()
+#End of exercise 16 -----------------------------------------------------------------
+
+#Start of exercise 17 -----------------------------------------------------------------
+from_file, to_file = ARGV #this is to tell ruby the files we'll use
+script = $0
+
+puts "Copying from #{from_file} to #{to_file}"
+input = File.open(from_file)
+indata = input.read()
+
+#puts "The input file is #{indata.length} bytes long" 
+
+#puts "Does the output file exist? #{File.exists? to_file}"
+#puts "Ready, hit RETURN to continue, CTRL-C to abort."
+#STDIN.gets
+
+output = File.open(to_file, 'w')
+output.write(indata)
+
+puts "Alright, all done."
+
+output.close()
+input.close()
+
+#ONE LINER: File.open(to_file, 'w').write(File.open(from_file).read()) 
+#End of exercise 17 -----------------------------------------------------------------
+
+
 
 
 
