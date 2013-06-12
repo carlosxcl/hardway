@@ -284,31 +284,54 @@ puts "Your third variable is: #{third}"
 #End of exercise 16 -----------------------------------------------------------------
 
 #Start of exercise 17 -----------------------------------------------------------------
-from_file, to_file = ARGV #this is to tell ruby the files we'll use
-script = $0
+# from_file, to_file = ARGV #this is to tell ruby the files we'll use
+# script = $0
 
-puts "Copying from #{from_file} to #{to_file}"
-input = File.open(from_file)
-indata = input.read()
+# puts "Copying from #{from_file} to #{to_file}"
+# input = File.open(from_file)
+# indata = input.read()
 
-#puts "The input file is #{indata.length} bytes long" 
+# #puts "The input file is #{indata.length} bytes long" 
 
-#puts "Does the output file exist? #{File.exists? to_file}"
-#puts "Ready, hit RETURN to continue, CTRL-C to abort."
-#STDIN.gets
+# #puts "Does the output file exist? #{File.exists? to_file}"
+# #puts "Ready, hit RETURN to continue, CTRL-C to abort."
+# #STDIN.gets
 
-output = File.open(to_file, 'w')
-output.write(indata)
+# output = File.open(to_file, 'w')
+# output.write(indata)
 
-puts "Alright, all done."
+# puts "Alright, all done."
 
-output.close()
-input.close()
+# output.close()
+# input.close()
 
 #ONE LINER: File.open(to_file, 'w').write(File.open(from_file).read()) 
 #End of exercise 17 -----------------------------------------------------------------
 
+#def defines a function (kinda like an internal script), in this case puts_two is the function name
+#*args is for calling if like ARGV, only for functions
+def puts_two(*args)
+	arg1, arg2 = args
+	puts "arg1: #{arg1}, arg2: #{arg2}"
+end
 
+def puts_two_again(arg1, arg2)
+	puts "arg1: #{arg1}, arg2: {arg2}"
+end
+
+def puts_one(arg1)
+	puts "arg1: #{arg1}"
+end
+
+def puts_none()
+	puts "I got nothin'."
+end
+
+#These are executing the functions:
+puts_two("Zed","Shaw")
+puts_two_again("Zed","Shaw")
+puts_one("First!")
+puts_none()
 
 
 
