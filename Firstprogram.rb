@@ -346,6 +346,8 @@ Did you indent all lines of code you want in the function 2 spaces?
 Did you close your function body by typing "end"?
 =end
 
+#!VARIABLES IN THE FUNCTION ARE NOT CONNECTED TO VARIABLES IN THE SCRIPT
+
 =begin
 CALL CHECKLIST:
 Did you call/use/run this function by typing its name?
@@ -355,6 +357,28 @@ Did you end the function call with a ) character.
 =end
 
 #Start of exercise 18  -----------------------------------------------------------------
+
+def cheese_and_crackers(cheese_count, boxes_of_crackers)
+	puts "You have #{cheese_count} cheeses!"
+	puts "You have #{boxes_of_crackers} boxes of crackers!"
+	puts "Man that's enough for a party!"
+	puts "Get a blanket."
+	puts # a blank line
+end
+
+puts "We can just give the function numbers directly:"
+cheese_and_crackers(20, 30)
+
+puts "Or, we can use variables from our script:"
+amount_of_cheese = 10
+amount_of_crackers= 50
+cheese_and_crackers(amount_of_cheese, amount_of_crackers)
+
+puts "We can even do math inside too:"
+cheese_and_crackers(10 + 20, 5 + 6)
+
+puts "And we can combine the two, variables and math:"
+cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
 
 
 
