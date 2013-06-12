@@ -203,33 +203,53 @@ puts "Your third variable is: #{third}"
 #End of exercise 13  -----------------------------------------------------------------
 
 #Start of exercise 14  -----------------------------------------------------------------
-user = ARGV.first
-prompt = '> '
+#user = ARGV.first
+#prompt = '> '
 
-puts "Hi #{user}, I'm the #{$0} script."
-puts "I'd liek to ask you a few questions."
-puts "Do you like me #{user}?"
-print prompt
-likes = STDIN.gets.chomp()
+#puts "Hi #{user}, I'm the #{$0} script."
+#puts "I'd liek to ask you a few questions."
+#puts "Do you like me #{user}?"
+#print prompt
+#likes = STDIN.gets.chomp()
 
-puts "Where do you live #{user}?"
-print prompt
-lives = STDIN.gets.chomp()
+#puts "Where do you live #{user}?"
+#print prompt
+#lives = STDIN.gets.chomp()
 
-puts "What kind of computer do you have?"
-print prompt
-computer = STDIN.gets.chomp()
+#puts "What kind of computer do you have?"
+#print prompt
+#computer = STDIN.gets.chomp()
 
-puts <<MESSAGE
-Alright, so you said #{likes} about liking me.
-You live in #{lives}. Not sure where that is. 
-And you have a #{computer} computer.Nice.
-MESSAGE
+#puts <<MESSAGE
+#Alright, so you said #{likes} about liking me.
+#You live in #{lives}. Not sure where that is. 
+#And you have a #{computer} computer.Nice.
+#MESSAGE
 #End of exercise 14 -----------------------------------------------------------------
-#REVIEW: ARVG, why not just use a simple script with variables? ARVG reads external files?
+#REVIEW: ARVG, why not just use a simple script with variables? ARVG reads external files? Runs scripts differently
 #using STDIN.gets instead of plain 'ol gets. That is because if there is stuff in ARGV, the default gets method tries to treat the first one as a file and read from that. To read from the user's input (i.e., stdin) in such a situation, you have to use it STDIN.gets explicitly.
 
 #Start of exercise 15 -----------------------------------------------------------------
+filename = ARGV.first #This makes the program run differently, like options
+
+prompt = "> " #Prints out a nice prompt >
+txt = File.open(filename) #text from the specified file
+
+puts "Here's your file: #{filename}" #Puts the name of the file
+puts txt.read() #puts the whole text
+
+puts "I'll also ask you to ype it again:"
+print prompt
+file_again = STDIN.gets.chomp() #This is getting user input
+
+txt_again = File.open(file_again)
+
+puts txt_again.read()
+#End of exercise 15 -----------------------------------------------------------------
+
+#Start of exercise 16 -----------------------------------------------------------------
+
+
 
 
 
