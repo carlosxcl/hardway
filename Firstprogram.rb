@@ -356,7 +356,7 @@ Did you put the values you want into the parenthesis separated by commas?
 Did you end the function call with a ) character.
 =end
 
-#Start of exercise 18  -----------------------------------------------------------------
+#Start of exercise 18 (Actually 19)  -----------------------------------------------------------------
 
 def cheese_and_crackers(cheese_count, boxes_of_crackers)
 	puts "You have #{cheese_count} cheeses!"
@@ -379,6 +379,10 @@ cheese_and_crackers(10 + 20, 5 + 6)
 
 puts "And we can combine the two, variables and math:"
 cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
+
+#End of exerxise 18 (Actually 19) -----------------------------------------------------------------
+
+
 
 
 
