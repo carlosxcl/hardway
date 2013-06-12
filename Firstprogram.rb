@@ -1,3 +1,5 @@
+#Learning Ruby the hard way exercises
+
 #Start of exercise 1
 puts "hello World"
 puts "hello Again" 
@@ -67,11 +69,33 @@ puts "He's got %s eyes and %s hair." % [my_eyes, my_hair]
 puts "His teeth are usually %s depending on the coffee." % my_teeth
 
 puts "If I add %d, %d, and %d I get %d." % [my_age, my_height, my_weight, my_age + my_height + my_weight]
-#Why just not put the variables inside the strings?
+#Why just not put the variables inside the strings? As in {}
 #End of exercise 5
 
 #Start of exercise 6
+x = "There are #{10} types of people"
+binary = "binary"
+do_not = "don't"
+y = "Those who know #{binary} and those who #{do_not}."
 
+puts x
+puts y
+
+puts "I said: #{x}."
+puts "I also said: '#{y}'."
+
+hilarious = false
+joke_evaluation = "Isn't that joke so funny?! #{hilarious}"
+
+puts joke_evaluation
+
+w = "This is the left side of..."
+e = "a string with the right side."
+
+puts w + e
+#End of exercise 6
+
+#Start of exercise 7
 
 
 
