@@ -69,7 +69,8 @@ puts "He's got %s eyes and %s hair." % [my_eyes, my_hair]
 puts "His teeth are usually %s depending on the coffee." % my_teeth
 
 puts "If I add %d, %d, and %d I get %d." % [my_age, my_height, my_weight, my_age + my_height + my_weight]
-#Why just not put the variables inside the strings? As in {}
+#REVIEW: Why just not put the variables inside the strings? As in {} instead of %
+#REVIEW: Puts adds a newline to the end of the output. Print does not.
 #End of exercise 5 -----------------------------------------------------------------
 
 #Start of exercise 6 -----------------------------------------------------------------
@@ -146,6 +147,39 @@ We'll be able to type as much as we like
 Even 4 lines if we want, or 5, or 6.
 PARAGRAPH
 #End of exercise 9 -----------------------------------------------------------------
+
+#Start of exercise 10 -----------------------------------------------------------------
+tabby_cat = "\tI'm tabbed in."
+persian_cat = "I'm split\non a line."
+backslash_cat = "I'm \\ a \\ cat."
+
+fat_cat = <<MY_HEREDOC
+I'll do a list:
+\t* Cat food
+\t* Fishies
+\t* Catnip\n\t* Grass
+MY_HEREDOC
+
+puts tabby_cat
+puts persian_cat
+puts backslash_cat
+puts fat_cat
+#End of exercise 10 -----------------------------------------------------------------
+#REVIEW escape sequences
+
+#Start of exercise 11 -----------------------------------------------------------------
+print "How old are you? "
+age = gets.chomp()
+print "How tall are you? "
+height = gets.chomp()
+print "How much do you weigh? "
+weight = gets.chomp()
+
+puts "So, you're #{age} years old, #{height} tall and #{weight} heavy"
+puts "You should probably start dieting, fatty."
+#End of exercise 11 -----------------------------------------------------------------
+
+
 
 
 
