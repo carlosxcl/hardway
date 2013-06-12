@@ -226,29 +226,61 @@ puts "Your third variable is: #{third}"
 #And you have a #{computer} computer.Nice.
 #MESSAGE
 #End of exercise 14 -----------------------------------------------------------------
-#REVIEW: ARVG, why not just use a simple script with variables? ARVG reads external files? Runs scripts differently
+#REVIEW: ARGV, why not just use a simple script with variables? ARGV reads external files? Runs scripts differently
 #using STDIN.gets instead of plain 'ol gets. That is because if there is stuff in ARGV, the default gets method tries to treat the first one as a file and read from that. To read from the user's input (i.e., stdin) in such a situation, you have to use it STDIN.gets explicitly.
 
 #Start of exercise 15 -----------------------------------------------------------------
-filename = ARGV.first #This makes the program run differently, like options
+#filename = ARGV.first #This makes the program run differently, like options
 
-prompt = "> " #Prints out a nice prompt >
-txt = File.open(filename) #text from the specified file
+#prompt = "> " #Prints out a nice prompt >
+#txt = File.open(filename) #text from the specified file
 
-puts "Here's your file: #{filename}" #Puts the name of the file
-puts txt.read() #puts the whole text
+#puts "Here's your file: #{filename}" #Puts the name of the file
+#puts txt.read() #puts the whole text
 
-puts "I'll also ask you to ype it again:"
-print prompt
-file_again = STDIN.gets.chomp() #This is getting user input
+#puts "I'll also ask you to ype it again:"
+#print prompt
+#file_again = STDIN.gets.chomp() #This is getting user input
 
-txt_again = File.open(file_again)
+#txt_again = File.open(file_again)
 
-puts txt_again.read()
+#puts txt_again.read()
 #End of exercise 15 -----------------------------------------------------------------
 
 #Start of exercise 16 -----------------------------------------------------------------
+filename = ARGV.first
+script = 0%
 
+puts "We're going to erase #{filename}."
+puts "If you don't want that, hit CTRL-C (^C)."
+puts "If you do want that, hit RETURN."
+
+print "? "
+STDIN.gets
+
+puts "Opening the file..."
+target = File.open(filename, 'w')
+
+puts "Truncating the file. Goodbye!"
+target.truncate(target.size)
+
+puts "Now I'am going to ask you for three lines."
+
+print "line 1: "; line1 = STDIN.gets.chomp()
+print "line 2: "; line2 = STDIN.gets.chomp()
+print "line 3: "; line3 = STDIN.gets.chomp()
+
+puts "I'm going to write these to the file."
+
+target.write(line1)
+target.write("\n")
+target.write(line2)
+target.write("\n")
+target.write(line3)
+target.write("\n")
+
+puts "And finally, we close it."
+target.close()
 
 
 
