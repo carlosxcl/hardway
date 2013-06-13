@@ -203,27 +203,27 @@ puts "Your third variable is: #{third}"
 #End of exercise 13  -----------------------------------------------------------------
 
 #Start of exercise 14  -----------------------------------------------------------------
-#user = ARGV.first
-#prompt = '> '
+# user = ARGV.first
+# prompt = '> '
 
-#puts "Hi #{user}, I'm the #{$0} script."
-#puts "I'd liek to ask you a few questions."
-#puts "Do you like me #{user}?"
-#print prompt
-#likes = STDIN.gets.chomp()
+# puts "Hi #{user}, I'm the #{$0} script."
+# puts "I'd liek to ask you a few questions."
+# puts "Do you like me #{user}?"
+# print prompt
+# likes = STDIN.gets.chomp()
 
-#puts "Where do you live #{user}?"
-#print prompt
-#lives = STDIN.gets.chomp()
+# puts "Where do you live #{user}?"
+# print prompt
+# lives = STDIN.gets.chomp()
 
-#puts "What kind of computer do you have?"
-#print prompt
-#computer = STDIN.gets.chomp()
+# puts "What kind of computer do you have?"
+# print prompt
+# computer = STDIN.gets.chomp()
 
-#puts <<MESSAGE
-#Alright, so you said #{likes} about liking me.
-#You live in #{lives}. Not sure where that is.
-#And you have a #{computer} computer.Nice.
+# puts <<MESSAGE
+# Alright, so you said #{likes} about liking me.
+# You live in #{lives}. Not sure where that is.
+# And you have a #{computer} computer.Nice.
 #MESSAGE
 #End of exercise 14 -----------------------------------------------------------------
 #REVIEW: ARGV, why not just use a simple script with variables? ARGV reads external files? Runs scripts differently
@@ -471,6 +471,9 @@ puts "That becomes: #{what} Can you do it by hand?" #Here is the result of what
 #gets : This gets user input
 #gets.chomp: gets user input and deletes and extra line (chomp)
 #ARGV: Executes the program differently?? REVIEW ??
+#%s: When used outside of as string like ("Let's talk about %s." % my_name) this calls a string variable
+#%d: Same but with numbers ("I am %d". % my_age). You can combine these with brackets such as:
+#puts "If I add %d, %d, and %d I get %d." % [my_age, my_height, my_weight, my_age + my_height + my_weight]
 
 #End of exercise 22 -----------------------------------------------------------------
 
@@ -520,7 +523,7 @@ puts "We can also do that this way:"
 puts "We'd have %s beans, %s jars, and %s crates." % secret_formula(start_point)
 #End of exercise 24 -----------------------------------------------------------------
 
-#Start of exercise 25 -----------------------------------------------------------------
+#Start of exercise 25 (REVIEW) -----------------------------------------------------------------
 
 # module Ex25
 #   def self.break_words(stuff)
@@ -567,7 +570,94 @@ puts "We'd have %s beans, %s jars, and %s crates." % secret_formula(start_point)
 #   end
 # end
 
+#End of exercise 25 (REVIEW) -----------------------------------------------------------------
 
+#Exercise 26 (TEST) -----------------------------------------------------------------
+
+#Exercise 27 & 28 Boolean logic -----------------------------------------------------------------
+
+#!=: Not equal
+#==: Equal
+#<=: Smaller or equal to
+#>=: Larger or equal to
+#(Use parenthesis to join stuff, like algebra)
+#not: The opossite of whatever is in front
+#true
+#false
+
+#Exercise 27 & 28 Boolean logic -----------------------------------------------------------------
+
+#Start of exercise 29 -----------------------------------------------------------------
+
+people = 20
+cats = 30
+dogs = 15
+
+if people < cats
+	puts "Too many cats! The world is doomed!"
+end
+
+if people > cats
+	puts "Not many cats! We need more cats! :3"
+end
+
+if people < dogs
+	puts "The world is drooled on!"
+end
+
+if people > dogs
+	puts "Woof woof, I'm lonely"
+end
+
+dogs += 5 #Added 5 to the original value
+
+if people >= dogs
+	puts "People are greater than or equal to dogs."
+end
+
+if people <= dogs
+	puts "People are less than or equal to dogs."
+end
+
+if people == dogs
+	puts "People are dogs."
+end
+
+#End of exercise 29 -----------------------------------------------------------------
+
+=begin
+
+IF: An if statement creates what is called a "branch" in the code. It's kind of like those choose your own adventure books where you are asked to turn to one page if you make one choice, and another if you go a different direction. The if-statement tells your script, "If this boolean expression is True, then run the code under it, otherwise skip it."
+
+=end
+
+#Start of exercise 30 -----------------------------------------------------------------
+
+people = 30
+cars = 40
+buses = 15
+
+if cars > people
+	puts "We should take the cars."
+elsif cars < people
+	puts "We should not take the cars."
+else
+	puts "We can't decide."
+end
+
+if buses > cars
+	puts "That's too many buses"
+elsif buses < cars
+	puts "Maybe we could take the buses."
+else
+	puts "We still can't decide."
+end
+
+if people > buses
+	puts "Alright, let's just take the buses."
+else
+	puts "Fine, let's stay home then"
+end
 
 
 
