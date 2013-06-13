@@ -2,7 +2,7 @@
 
 #Start of exercise 1 -----------------------------------------------------------------
 puts "hello World"
-puts "hello Again" 
+puts "hello Again"
 puts "I like typing like this"
 puts "This is fun."
 puts "Yay! for Printing"
@@ -55,7 +55,7 @@ my_name = 'Zed A. Shaw'
 my_age = 35 # not a lie
 my_height = 74 # inches
 my_weight = 180 # lbs
-my_kweight= my_weight * 0.45 
+my_kweight= my_weight * 0.45
 my_eyes = 'Blue'
 my_teeth = 'White'
 my_hair = 'Brown'
@@ -100,7 +100,7 @@ puts w + e
 puts "Mary had a little lamb."
 puts "Its fleece was white as %s." % 'snow'
 puts "And everywhere that Mary went."
-puts "." * 10 
+puts "." * 10
 
 end1 = "C"
 end2 = "h"
@@ -115,7 +115,7 @@ end10 = "g"
 end11 = "e"
 end12 = "r"
 
-print end1 + end2 + end3 + end4 + end5 + end6 
+print end1 + end2 + end3 + end4 + end5 + end6
 puts end7 + end8 + end9 + end10 + end11 + end12
 #End of exercise 7 -----------------------------------------------------------------
 
@@ -222,7 +222,7 @@ puts "Your third variable is: #{third}"
 
 #puts <<MESSAGE
 #Alright, so you said #{likes} about liking me.
-#You live in #{lives}. Not sure where that is. 
+#You live in #{lives}. Not sure where that is.
 #And you have a #{computer} computer.Nice.
 #MESSAGE
 #End of exercise 14 -----------------------------------------------------------------
@@ -266,7 +266,7 @@ puts "Your third variable is: #{third}"
 
 # puts "Now I'am going to ask you for three lines."
 
-# print "line 1: "; line1 = STDIN.gets.chomp() #getting user input 
+# print "line 1: "; line1 = STDIN.gets.chomp() #getting user input
 # print "line 2: "; line2 = STDIN.gets.chomp()
 # print "line 3: "; line3 = STDIN.gets.chomp()
 
@@ -291,7 +291,7 @@ puts "Your third variable is: #{third}"
 # input = File.open(from_file)
 # indata = input.read()
 
-# #puts "The input file is #{indata.length} bytes long" 
+# #puts "The input file is #{indata.length} bytes long"
 
 # #puts "Does the output file exist? #{File.exists? to_file}"
 # #puts "Ready, hit RETURN to continue, CTRL-C to abort."
@@ -305,7 +305,7 @@ puts "Your third variable is: #{third}"
 # output.close()
 # input.close()
 
-#ONE LINER: File.open(to_file, 'w').write(File.open(from_file).read()) 
+#ONE LINER: File.open(to_file, 'w').write(File.open(from_file).read())
 #End of exercise 17 -----------------------------------------------------------------
 
 #def defines a function (kinda like an internal script), in this case puts_two is the function name
@@ -381,6 +381,191 @@ puts "And we can combine the two, variables and math:"
 cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 1000)
 
 #End of exerxise 18 (Actually 19) -----------------------------------------------------------------
+
+#Start of exercise 20 -----------------------------------------------------------------
+# input_file = ARGV[0] #this is grabbing the input file
+
+# def print_all (f) #this function prints the entire textfile
+# 	puts f.read()
+# end
+
+# def rewind(f) #this function rewinds it like reverse, only that it affects the lines
+# 	f.seek(0, IO::SEEK_SET)
+# end
+
+# def print_a_line(line_count,f)
+# 	puts "#{line_count} #{f.readline()}"
+# end
+
+# current_file = File.open(input_file)
+
+# puts "First let's print the whole file:"
+# puts # a blank line
+
+# print_all(current_file) #calls up the first function print
+
+# puts "Now let's rewind, kind of like a tape."
+
+# rewind(current_file) #calls up the second function
+
+# puts "Let's print three lines:"
+
+# current_line = 1
+# print_a_line(current_line, current_file) #these print of lines that have now been reversed
+
+# current_line = current_line + 1 #what's this plus one for??? Is it like puts (extra line)?
+# print_a_line(current_line, current_file)
+
+# current_line = current_line + 1
+# print_a_line(current_line, current_file)
+#End of exercise 20 -----------------------------------------------------------------
+
+#Start of exercise 21 -----------------------------------------------------------------
+
+def add(a, b) #This is a function that adds variables a and b, here goes function name and variables
+	puts "ADDING #{a} + #{b}" #this simply puts
+	a + b
+end
+
+def substract(a, b)
+	puts "SUBSTRACTING #{a} - #{b}"
+	a - b
+end
+
+def multiply(a, b)
+	puts "MULTIPLYING #{a} * #{b}"
+	a * b
+end
+
+def divide(a, b)
+	puts "DIVIDING #{a} / #{b}"
+	a / b
+end
+
+puts "Let's do some math with just functions!"
+
+age = add(30, 5) #Here are the variables
+height = substract(78,4)
+weight = multiply(90,2)
+iq = divide(100,2)
+
+puts "Age: #{age}, Height: #{height}, Weight: #{weight}, IQ: #{iq}"
+
+puts "Here is a puzzle"
+
+what = add(age, substract(height, multiply(weight,divide(iq, 2)))) #This combines all functions = what
+
+puts "That becomes: #{what} Can you do it by hand?" #Here is the result of what
+
+#End of exercise 21 -----------------------------------------------------------------
+
+#Start of exercise 22 adds a newline to the end of the output. Print does not.
+
+#LIST OF WORDS AND CHARACTERS
+#def: Starts a function
+#end: Ends the function
+# = : sets a variable, or constant
+#print: prints a string on screen
+#puts: Adds a newline to the end of the output. Print does not.
+#(#{variable}): When in a string these #{} allows you to put a variable or constant inside
+#gets : This gets user input
+#gets.chomp: gets user input and deletes and extra line (chomp)
+#ARGV: Executes the program differently?? REVIEW ??
+
+#End of exercise 22 -----------------------------------------------------------------
+
+#Start of exercise 23 -----------------------------------------------------------------
+#Nil (Reading ruby code)
+#End of exercise 23 -----------------------------------------------------------------
+
+#Start of exercise 24 -----------------------------------------------------------------
+
+puts "Let's practice everything."
+puts "You\'d need to know \'bout escapes with \\ that do \n newlines and \t tabs."
+
+poem = <<MULTI_LINE_STRING
+
+\t The lovely World
+with logic so firmly planted
+cannot discern \n the needs of love
+nor comprehend passion from intuition
+and requires an explanation
+\n\t\twhere there is none.
+
+MULTI_LINE_STRING
+
+puts "------------"
+puts poem
+puts "------------"
+
+five = 10 - 2 + 3 - 6
+puts "This should be five: #{five}"
+
+def secret_formula(started)
+	jelly_beans = started * 500
+	jars = jelly_beans / 1000
+	crates = jars / 100
+	return jelly_beans, jars, crates
+end
+
+start_point = 10000
+beans, jars, crates = secret_formula(start_point)
+
+puts "With a starting point of: #{start_point}"
+puts "We'd have #{}{beans} beans, #{jars} jars, and #{crates} crates."
+
+start_point = start_point / 10
+
+puts "We can also do that this way:"
+puts "We'd have %s beans, %s jars, and %s crates." % secret_formula(start_point)
+#End of exercise 24 -----------------------------------------------------------------
+
+#Start of exercise 25 -----------------------------------------------------------------
+
+# module Ex25
+#   def self.break_words(stuff)
+#     # This function will break up words for us.
+#     words = stuff.split(' ')
+#     words
+#   end
+
+#   def self.sort_words(words)
+#     # Sorts the words.
+#     words.sort()
+#   end
+
+#   def self.print_first_word(words)
+#     # Prints the first word and shifts the others down by one.
+#     word = words.shift()
+#     puts word
+#   end
+
+#   def self.print_last_word(words)
+#     # Prints the last word after popping it off the end.
+#     word = words.pop()
+#     puts word
+#   end
+
+#   def self.sort_sentence(sentence)
+#     # Takes in a full sentence and returns the sorted words.
+#     words = break_words(sentence)
+#     sort_words(words)
+#   end
+
+#   def self.print_first_and_last(sentence)
+#     # Prints the first and last words of the sentence.
+#     words = break_words(sentence)
+#     print_first_word(words)
+#     print_last_word(words)
+#   end
+
+#   def self.print_first_and_last_sorted(sentence)
+#     # Sorts the words then prints the first and last one.
+#     words = sort_sentence(sentence)
+#     print_first_word(words)
+#     print_last_word(words)
+#   end
+# end
 
 
 
