@@ -180,7 +180,7 @@ puts fat_cat
 #End of exercise 11 -----------------------------------------------------------------
 
 #Start of exercise 12 -----------------------------------------------------------------
-#require 'open-uri'
+#require 'open-uri' # This basically loads this file vs INCLUDE (doesnt load any external files) example Require ./filename
 
 #open("http://www.ruby-lang.org/en") do |f|
 #  f.each_line {|line| p line}
@@ -470,7 +470,7 @@ puts "That becomes: #{what} Can you do it by hand?" #Here is the result of what
 #(#{variable}): When in a string these #{} allows you to put a variable or constant inside
 #gets : This gets user input
 #gets.chomp: gets user input and deletes and extra line (chomp)
-#ARGV: Executes the program differently?? REVIEW ??
+#ARGV: Executes the program differently?? REVIEW ?? Takes external input
 #%s: When used outside of as string like ("Let's talk about %s." % my_name) this calls a string variable
 #%d: Same but with numbers ("I am %d". % my_age). You can combine these with brackets such as:
 #puts "If I add %d, %d, and %d I get %d." % [my_age, my_height, my_weight, my_age + my_height + my_weight]
@@ -663,51 +663,95 @@ end
 
 #Start of exercise 31 -----------------------------------------------------------------
 
-def prompt
-	print "> "
-end
+# def prompt
+# 	print "> "
+# end
 
-puts "You enter a dark room with two doors. Do you get through door #1 or door #2?"
+# puts "You enter a dark room with two doors. Do you get through door #1 or door #2?"
 
-prompt; door = gets.chomp
+# prompt; door = gets.chomp
 
-if door == "1"
-	puts "There's a giant bear here eating a cheese cake. What do you do?"
-	puts "1. Take the cake."
-	puts "2. Scream at the bear"
-	puts "3. Karate chop him"
+# if door == "1"
+# 	puts "There's a giant bear here eating a cheese cake. What do you do?"
+# 	puts "1. Take the cake."
+# 	puts "2. Scream at the bear"
+# 	puts "3. Karate chop him"
 
-  prompt; bear = gets.chomp
+#   prompt; bear = gets.chomp
 
-  if bear == "1"
-  	puts "The bear eats your face off. Good job!"
-  elsif bear == "2"
-  	puts "the bear eats your legs off. Good job"
-  elsif bear == "3"
-  	puts "The bear fainted. Karate chop is super effective!"
-  else
-  	puts "Well, doing #{bear} is probably better. Bear runs away."
-  end
+#   if bear == "1"
+#   	puts "The bear eats your face off. Good job!"
+#   elsif bear == "2"
+#   	puts "the bear eats your legs off. Good job"
+#   elsif bear == "3"
+#   	puts "The bear fainted. Karate chop is super effective!"
+#   else
+#   	puts "Well, doing #{bear} is probably better. Bear runs away."
+#   end
 
-elsif door == "2"
-	puts "You stare into the endless abyss at Cthulu's retina."
-	puts "1. Blueberries."
-	puts "2. Yellow jacket clothespin."
-	puts "3. Understanding revolvers yelling melodies."
+# #You can add as many elseif's as youd like to give more options.
+# #prompt; gives you a nice > when user has to input
 
-	prompt; insanity = gets.chomp
+# elsif door == "2"
+# 	puts "You stare into the endless abyss at Cthulu's retina."
+# 	puts "1. Blueberries."
+# 	puts "2. Yellow jacket clothespin."
+# 	puts "3. Understanding revolvers yelling melodies."
 
-	if insanity == "1" or insanity == "2"
-		puts "Your body survives powered by a mind of jello. Good job!"
-	else
-		puts "The insanity rots your eyes into a pool of muck. Good job!"
-	end
+# 	prompt; insanity = gets.chomp
 
-else
-	puts "You stumble around and fall on a knife and die. Good job!"
-end
+# 	if insanity == "1" or insanity == "2"
+# 		puts "Your body survives powered by a mind of jello. Good job!"
+# 	else
+# 		puts "The insanity rots your eyes into a pool of muck. Good job!"
+# 	end
+
+# else
+# 	puts "You stumble around and fall on a knife and die. Good job!"
+# end
 
 #End of exercise 31 -----------------------------------------------------------------
+
+#Start of exercise 32 -----------------------------------------------------------------
+
+#An array is a container of things that are organized in order, starts and ends with []
+
+# hairs = ['brown', 'blond', 'red'] #Here we assign a variable with an array
+# eyes = ['brown', 'blue', 'green']
+# weights = [1, 2, 3, 4]
+
+the_count = [1, 2, 3, 4, 5]
+fruits = ['apples', 'oranges', 'pears', 'apricots']
+change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
+
+for number in the_count
+	puts "this is count #{number}"
+end
+
+fruits.each do |fruit|
+	puts "A fruit of type: #{fruit}"
+end
+
+for i in change
+	puts "I got #{i}"
+end
+
+elements = []
+
+for i in (0..5)
+	puts "Adding #{i} to the list"
+	elements.push(i)
+end
+
+for i in elements
+	puts "Element was: #{i}"
+end
+
+
+
+
+
+
 
 
 
