@@ -720,32 +720,171 @@ end
 # eyes = ['brown', 'blue', 'green']
 # weights = [1, 2, 3, 4]
 
-the_count = [1, 2, 3, 4, 5]
-fruits = ['apples', 'oranges', 'pears', 'apricots']
-change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
+# the_count = [1, 2, 3, 4, 5]
+# fruits = ['apples', 'oranges', 'pears', 'apricots']
+# change = [1, 'pennies', 2, 'dimes', 3, 'quarters']
 
-for number in the_count
-	puts "this is count #{number}"
+# for number in the_count
+# 	puts "this is count #{number}"
+# end
+
+# fruits.each do |fruit|
+# 	puts "A fruit of type: #{fruit}"
+# end
+
+# for i in change
+# 	puts "I got #{i}"
+# end
+
+# elements = []
+
+# for i in (0..5)
+# 	puts "Adding #{i} to the list"
+# 	elements.push(i)
+# end
+
+# for i in elements
+# 	puts "Element was: #{i}"
+# end
+
+#End of exercise 32 -----------------------------------------------------------------
+
+#Start of exercise 33 -----------------------------------------------------------------
+
+# i = 0
+# numbers = [] #Here we set the array in which the numbers will be displayed
+
+# while i < 6
+# 	puts "At the top i is #{i}"
+# 	numbers.push(i) #I think this pushes the numbers to the array
+
+# 	i = i + 1 #This changes the variable so that the while-loop goes un till 6 and stops
+# 	puts "Numbers now: #{numbers}"
+# 	puts "At the bottom i is #{i}"
+# end
+
+# puts "The numbers: "
+
+# for num in numbers
+# 	puts num
+# end
+
+#Start of exercise 34 -----------------------------------------------------------------
+
+# animals = ['bear', 'tiger', 'penguin', 'zebra'] #This is a normal array
+# bear = animals[0] #This is how you access a specific element of an array (with the cardinal number -normal minus one-)
+
+#End of exercise 34 -----------------------------------------------------------------
+
+#Doodle -----------------------------------------------------------------
+
+# characters = ['carlos', 'james', 'tomas', 'charlie']
+
+# puts "What is your name?"
+
+# answer = gets.chomp()
+
+
+# if answer == "carlos"
+# 	puts "hello carlos!"
+# elsif answer == "james"
+# 	puts "hello james!"
+# else
+# 	puts "thats a funny name, who called you that?"
+
+# end
+
+# answer2 = gets.chomp()
+
+# puts "Wow #{answer2} was really creative with that name!"
+
+#Doodle -----------------------------------------------------------------
+
+def prompt()
+  print "> "
 end
 
-fruits.each do |fruit|
-	puts "A fruit of type: #{fruit}"
+def gold_room()
+  puts "This room is full of gold.  How much do you take?"
+
+  prompt; next_move = gets.chomp
+  if next_move.include? "0" or next_move.include? "1"
+    how_much = next_move.to_i()
+  else
+    dead("Man, learn to type a number.")
+  end
+
+  if how_much < 50
+    puts "Nice, you're not greedy, you win!"
+    Process.exit(0)
+  else
+    dead("You greedy bastard!")
+  end
 end
 
-for i in change
-	puts "I got #{i}"
+
+def bear_room()
+  puts "There is a bear here."
+  puts "The bear has a bunch of honey."
+  puts "The fat bear is in front of another door."
+  puts "How are you going to move the bear?"
+  bear_moved = false
+
+  while true
+    prompt; next_move = gets.chomp
+
+    if next_move == "take honey"
+      dead("The bear looks at you then slaps your face off.")
+    elsif next_move == "taunt bear" and not bear_moved
+      puts "The bear has moved from the door. You can go through it now."
+      bear_moved = true
+    elsif next_move == "taunt bear" and bear_moved
+      dead("The bear gets pissed off and chews your leg off.")
+    elsif next_move == "open door" and bear_moved
+      gold_room()
+    else
+      puts "I got no idea what that means."
+    end
+  end
 end
 
-elements = []
+def cthulhu_room()
+  puts "Here you see the great evil Cthulhu."
+  puts "He, it, whatever stares at you and you go insane."
+  puts "Do you flee for your life or eat your head?"
 
-for i in (0..5)
-	puts "Adding #{i} to the list"
-	elements.push(i)
+  prompt; next_move = gets.chomp
+
+  if next_move.include? "flee"
+    start()
+  elsif next_move.include? "head"
+    dead("Well that was tasty!")
+  else
+    cthulhu_room()
+  end
 end
 
-for i in elements
-	puts "Element was: #{i}"
+def dead(why)
+  puts "#{why}  Good job!"
+  Process.exit(0)
 end
+
+def start()
+  puts "You are in a dark room."
+  puts "There is a door to your right and left."
+  puts "Which one do you take?"
+
+  prompt; next_move = gets.chomp
+
+  if next_move == "left"
+    bear_room()
+  elsif next_move == "right"
+    cthulhu_room()
+  else
+    dead("You stumble around the room until you starve.")
+  end
+end
+
 
 
 
